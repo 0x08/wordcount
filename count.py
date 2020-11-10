@@ -1,11 +1,12 @@
 import operator
 import re
+import sys
 
 words = {}
 regex = re.compile("[^a-z]")
 
 # read all words from the example.txt text file and count how often they occur
-with open("example.txt", "r") as f:
+with open(sys.argv[0], "r") as f:
     for line in f:
         for word in line.split():
             # convert word to lowercase as we don't care about case
@@ -21,6 +22,9 @@ with open("example.txt", "r") as f:
 # sort the words by their frequency in reverse
 sorted_words = sorted(words.items(), key=operator.itemgetter(1), reverse=True)
 
+print("total distinct words: " + str(len(sorted_words)))
+print("top 100 words:")
+
 # print the 100 most frequently occurring words
 for word in sorted_words[:100]:
-    print(word[0] + ": " + str(word[1]))
+    print(">> " + word[0] + ": " + str(word[1]))
