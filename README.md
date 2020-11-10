@@ -2,7 +2,9 @@
 
 Small application to count the frequency of words in a text file (in this case example.txt).
 
-Output of the application:
+# running
+
+The example can be run by calling `python count.py example.txt`. The application will provide a list of words and the frequency these words occur in the provided text file:
 
 ```
 et: 80
