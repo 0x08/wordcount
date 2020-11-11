@@ -19,7 +19,12 @@ with open("example.txt", "r") as f:
 
 print("unique words:")
 
+unique_count = 0
+
 # print words that only occur once
 for word in words:
     if words[word] == 1:
         print(">> " + word)
+        unique_count += 1
+
+print(f"\n>>> {unique_count} unique words seen")
